@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Blog.Data;
 using Blog.Models;
 
@@ -11,8 +12,9 @@ namespace Blog
             Console.WriteLine("Hello World!");
 
             using var context = new BlogDataContext();
-            var tag = new Tag() { Name = "ASP.NET", Slug = "ASP.NET" };
-            context.Add(tag);  
+            var tag = context.Tags.FirstOrDefault( x => x.Id == 2);
+            tag.Name = ".NET updated";
+            tag.Slug = "dotnet";
             context.SaveChanges();
 
         }
