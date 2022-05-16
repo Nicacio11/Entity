@@ -13,8 +13,10 @@ namespace Blog
 
             using var context = new BlogDataContext();
             var tag = context.Tags.FirstOrDefault( x => x.Id == 2);
-            tag.Name = ".NET updated";
-            tag.Slug = "dotnet";
+            // tag.Name = ".NET updated";
+            // tag.Slug = "dotnet";
+            // context.SaveChanges();
+            context.Remove(tag);
             context.SaveChanges();
 
         }
