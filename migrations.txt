@@ -1,0 +1,27 @@
+dotnet tool install --global dotnet-ef
+
+//é bom usar antes da migration
+dotnet clean
+dotnet build 
+
+verificar se tem 
+Microsoft.EntityFrameworkCore.Design nos packages
+
+criando migration
+dotnet ef migrations add NameMigration
+removendo migration
+dotnet ef migrations remove NameMigration
+
+
+atualizando o banco - se n tiver banco o proprio entjity cria
+
+dotnet ef database update
+
+
+em caso de não querer mais trabalhar com Migrations
+apagar a table __EFMigrationsHistory
+remove o pacote Microsoft.EntityFrameworkCore.Design
+apaga a pasta migrations
+
+gerando script com ef
+dotnet ef migrations script -o ./script.sql
