@@ -1,5 +1,5 @@
 using System;
-
+using System.Collections.Generic;
 namespace Blog.Models
 {
     public class Post
@@ -16,5 +16,7 @@ namespace Blog.Models
         public int AuthorId { get; set; }
 
         public User Author { get; set; }
+
+        public List<Tag> Tags { get; set; }
     }
 }
