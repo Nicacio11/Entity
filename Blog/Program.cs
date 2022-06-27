@@ -73,8 +73,11 @@ namespace Blog
 
         public static List<Post> GetPosts(BlogDataContext context, int skip = 0, int take = 1000)
         {
+            // then include por baixo dos panos usa um subselect pode deixar a query 
             var posts = context.Posts
             .AsNoTracking()
+            .Include(x => x.Author)
+                .ThenInclude(x => x.Roles)
             .Skip(skip)
             .Take(take)
             .ToList();
