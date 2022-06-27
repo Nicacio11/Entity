@@ -17,6 +17,6 @@ namespace Blog.Models
 
         public User Author { get; set; }
 
-        public List<Tag> Tags { get; set; }
+        public virtual List<Tag> Tags { get; set; }
     }
 }
